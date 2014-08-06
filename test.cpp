@@ -25,7 +25,7 @@ CHECK_TRAIT(is_nothrow_destructible<Json>);
 
 void parse_from_stdin() {
     string buf;
-    while (!std::cin.eof()) buf += std::cin.get();
+    while ( std::getline(std::cin, buf) ) {};
 
     string err;
     auto json = Json::parse(buf, err);
